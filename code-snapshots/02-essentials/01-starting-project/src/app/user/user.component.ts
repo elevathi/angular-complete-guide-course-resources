@@ -10,4 +10,17 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class UserComponent {
   selectedUser = DUMMY_USERS[randomIndex];
+
+  get imagePath() {
+    return 'assets/users/' + this.selectedUser.avatar;
+  }
+  get userName() {
+    return this.selectedUser.name;
+  }
+
+  onSelectUser() {
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    console.log(this.selectedUser.name);
+    this.selectedUser = DUMMY_USERS[randomIndex];
+  }
 }
